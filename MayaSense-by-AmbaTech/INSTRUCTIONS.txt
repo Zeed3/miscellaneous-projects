@@ -1,0 +1,4 @@
+1) go to command prompt and type "pip install -r requirements.txt"
+2) go to app.py inside the folder
+3) open the terminal, then "python app.py" to start the app
+4) copy and paste the local network that already start to try it

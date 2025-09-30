@@ -1,0 +1,16 @@
+alkana
+emoji
+googletrans==4.0.0rc1
+keyboard
+openai==0.27.8
+pandas
+PyAudio
+pytchat
+requests
+torch
+unidic
+beautifulsoup4
+mecab-python3
+Flask
+CORS
+Flask-CORS

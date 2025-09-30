@@ -1,0 +1,14 @@
+*Jika terdapat error mecab, silahkan ke utility/TTS.py 
+kemudian di komen # from Utility.katakana import *
+dan komen juga function # def voicevox_tts(tts)
+
+ini hanya untuk menambahkan opsi agar ai bisa berbahasa jepang, voice bahasa jepang memerlukan docking untuk dijalankan
+sehingga kami sarankan di komen saja agar tidak mengganggu dalam mencoba AI kami.
+
+*Untuk data Binus, kami tidak begitu banyak ngambilnya, karena lebih baik akses ke API Binus jika diperbolehkan
+agar dapat mengakses lebih dalam untuk AI tersebut dapat memberi jawaban yang realtime
+
+*Membutuhkan data akun Binus user agar AI tersebut dapat diintegrasikan dengan informasi realtime juga
+
+*Untuk voice recognition agak sulit kalau microphonenya kurang bagus sehingga kadang menghasilkan transcribe file
+yang tidak sesuai, sehingga perlu diperjelas lagi dalam menggunakan fitur ini

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MayaSense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/logo.png') }}" type="image/x-icon">
+</head>
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <span class="header-left">MayaSense</span>
+        <div class="header-middle">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" class="logo">
+        </div>
+        <div class="header-right">Welcome Back, User!</div>
+    </header>
+
+    <!-- Side menu section -->
+    <div class="side-menu">
+        <div class="empty-border">
+            <img src="{{ url_for('static', filename='assets/hamburger_icon.png') }}" alt="Menu" class="hamburger-icon" style="width: 30px; height: 30px;">
+        </div>
+        <div class="white-border"></div>
+        <button id="language-btn">Language & Audio</button>
+        <button id="chat-history-btn">Chat History</button>
+        <button id="about-btn">About</button>
+        <button id="help-btn">Help</button>
+        <button id="feedback-btn">Feedback</button>
+        <button id="binusmaya-btn" onclick="window.location.href='https://binusmaya.binus.ac.id'">BinusMaya</button>
+        <button id="reset-btn">Reset Chat</button>
+    </div>
+
+    <!-- Chat container section -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="thinking-message" id="thinking-message">Maya is thinking...</div>
+    </div>
+
+    <!-- Floating container for chat input and buttons -->
+    <div class="floating-container">
+        <textarea class="floating-textarea" id="chat-input" placeholder="Type your question here..."></textarea>
+        <button class="send-button" id="send-button">Send</button>
+        <button class="voice-button" id="voice-recognition-button">🎤</button>
+        <script>
+            let isRecording = false;
+            document.getElementById('voice-recognition-button').addEventListener('click', function() {
+                if (isRecording) {
+                    this.textContent = '🎤';
+                } else {
+                    this.textContent = '🔴';
+                }
+                isRecording = !isRecording;
+            });
+        </script>
+    </div>
+
+    <!-- Chat history popup -->
+    <div class="chat-history-popup" id="chat-history-popup">
+        <div class="chat-history-header">
+            <span>Chat History</span>
+            <button id="close-chat-history">X</button>
+        </div>
+        <div class="chat-history-content" id="chat-history-content">
+        </div>
+        <div class="chat-history-footer">
+            <button id="download-chat">Download Chat</button>
+        </div>
+    </div>
+
+    <!-- Reset chat popup -->
+    <div class="reset-popup" id="reset-popup">
+        <div class="reset-header">
+            <span>Reset Chat</span>
+            <button id="close-reset-popup">X</button>
+        </div>
+        <div class="reset-content">
+            <p>Are you sure you want to erase all chat and chat history?</p>
+            <button id="confirm-reset">Yes, Reset</button>
+            <button id="cancel-reset">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Language & Audio settings popup -->
+    <div class="settings-popup" id="settings-popup">
+        <div class="settings-header">
+            <span>Language & Audio Settings</span>
+            <button id="close-settings-popup">X</button>
+        </div>
+        <div class="settings-content">
+            <label for="text-language">Text Language:</label>
+            <select id="text-language">
+                <option value="EN">English</option>
+                <option value="ID">Indonesian</option>
+                <option value="JA">Japanese</option>
+            </select>
+            <label for="voice-language">Voice Language:</label>
+            <select id="voice-language">
+                <option value="EN">English</option>
+                <option value="ID">Indonesian</option>
+                <option value="JA">Japanese</option>
+            </select>
+        </div>
+        <div class="settings-footer">
+            <button id="save-settings">Save</button>
+        </div>
+    </div>
+
+    <!-- Help popup -->
+    <div class="help-popup" id="help-popup">
+        <div class="help-header">
+            <span>Help</span>
+            <button id="close-help-popup">X</button>
+        </div>
+        <div class="help-content">
+            <p>Welcome to MayaSense! Here are some tips to get you started:</p>
+            <ul>
+                <li>Use the chat box to ask questions or give commands.</li>
+                <li>Click the microphone button to use voice recognition.</li>
+                <li>Use the "Language & Audio" button to change language settings.</li>
+                <li>Check your chat history by clicking the "Chat History" button.</li>
+                <li>Reset the chat by clicking the "Reset Chat" button.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Feedback popup -->
+    <div class="feedback-popup" id="feedback-popup">
+        <div class="feedback-header">
+            <span>Feedback</span>
+            <button id="close-feedback-popup">X</button>
+        </div>
+        <div class="feedback-content">
+            <p>We value your feedback! Please let us know how we can improve:</p>
+            <textarea id="feedback-text" placeholder="Enter your feedback here..."></textarea>
+            <button id="submit-feedback">Submit</button>
+        </div>
+    </div>
+
+    <!-- About popup -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="about-content">
+                <h2>About MayaSense</h2>
+                <p style="text-align: justify; margin-top: 1em; margin-bottom: 1em; line-height: 1.2;">
+                    Maya is a cheerful and helpful AI Virtual Assistant created by Ambatech Team with the member of Adrian, Anricco, and Zahwan using, Silero, VoiceVox, OpenAI, WhisperAI, and DeepL. Designed specifically for Binus students, Maya is always ready to provide campus-related information with a smile. Her personality is approachable and lighthearted, often adding a sprinkle of humor to make interactions enjoyable. Maya takes her role seriously, and if she ever makes a mistake, she quickly apologizes with genuine regret and determination to make things right. As a reliable yet playful guide, Maya ensures that every student feels supported and valued, turning even mundane inquiries into engaging experiences.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

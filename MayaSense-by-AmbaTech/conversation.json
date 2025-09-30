@@ -1,0 +1,24 @@
+{
+    "history": [
+        {
+            "role": "user",
+            "content": "Hello there"
+        },
+        {
+            "role": "assistant",
+            "content": "Hello! How can I assist you today?"
+        },
+        {
+            "role": "user",
+            "content": "in short can you tell me what is binus university?"
+        },
+        {
+            "role": "assistant",
+            "content": "Sure! Bina Nusantara University, commonly known as BINUS University, is a private university in Indonesia known for its innovative programs and strong emphasis on technology and entrepreneurship. Established in 1974, BINUS offers a wide range of undergraduate and postgraduate programs in various fields such as business, engineering, design, computer science, and more. The university is committed to providing quality education and preparing students to excel in the rapidly evolving global landscape."
+        },
+        {
+            "role": "user",
+            "content": "Bolehkah anda ceritakan 5 cara untuk saya belajar dengan fokus? Kerana saya ada 2 hari sebelum peperiksaan. Ada apa-apa cara untuk saya belajar?"
+        }
+    ]
+}

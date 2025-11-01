@@ -21,7 +21,7 @@ app = Flask(__name__)
 sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf8', buffering=1)
 
 # use your own API Key, you can get it from https://openai.com/. I place my API Key in a separate file called config.py
-openai.api_key = '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'
+openai.api_key = ''
 
 conversation = []
 # Create a dictionary to hold the message data
@@ -258,4 +258,5 @@ def translate_text(text):
     return display_text
 
 if __name__ == '__main__':
+
     app.run(debug=True)
